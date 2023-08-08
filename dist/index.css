@@ -1,0 +1,171 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  font-weight: 600;
+}
+
+.navbar {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .navbar {
+    display: none;
+  }
+}
+.navbar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0;
+}
+.navbar .help {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: auto;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  .column {
+    width: 100vw;
+  }
+}
+.column .menu {
+  height: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+@media (max-width: 500px) {
+  .column .menu {
+    height: 75px;
+    grid-template-columns: min-content auto;
+    grid-template-rows: auto;
+  }
+}
+.column .menu .searchBar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+}
+@media (max-width: 500px) {
+  .column .menu .searchBar {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+.column .menu .searchBar input {
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+}
+@media (max-width: 500px) {
+  .column .menu .searchBar input {
+    font-size: 0.95rem;
+  }
+}
+.column .menu nav {
+  width: 100%;
+  display: flex;
+}
+@media (max-width: 500px) {
+  .column .menu nav {
+    display: none;
+  }
+}
+.column .menu nav a {
+  position: relative;
+  display: flex;
+  margin: auto;
+  border: solid;
+  border-width: 0 10px;
+  border-color: transparent;
+}
+.column .menu nav a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  bottom: -10px;
+}
+.column .menu .icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 500px) {
+  .column .menu .icons {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+}
+.column .select-menu {
+  display: none;
+}
+@media (max-width: 500px) {
+  .column .select-menu {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.column .select-menu button {
+  background: none;
+  font-size: 0.95rem;
+  border: none;
+}
+.column .units {
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto auto auto auto;
+  padding: 10px;
+}
+.column .units .vertical {
+  position: relative;
+}
+.column .units .vertical .icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  padding: 5px;
+  border-radius: 100%;
+}
+.column .units div {
+  display: flex;
+  margin: 10px;
+}
+.column .units img {
+  width: 100%;
+  height: 100%;
+}
